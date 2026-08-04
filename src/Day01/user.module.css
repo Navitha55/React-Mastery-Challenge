@@ -1,0 +1,185 @@
+.wrapper {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    background: #f5f7fb;
+}
+
+.heading {
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: #1f2937;
+}
+
+.inputs,
+.card {
+    width: min(360px, 100%);
+    background: #fff;
+    padding: 25px;
+    border-radius: 12px;
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.subHeading {
+    text-align: center;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #2563eb;
+}
+
+.inputsBox {
+    width: 100%;
+    padding: 10px 14px;
+    font-size: 1rem;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    outline: none;
+    transition: 0.25s;
+    box-sizing: border-box;
+}
+
+.inputsBox:focus {
+    border-color: #2563eb;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.row:last-child {
+    border-bottom: none;
+}
+
+.label {
+    font-weight: 600;
+    color: #374151;
+}
+
+.value {
+    color: #2563eb;
+    font-weight: 600;
+}
+
+.invalid {
+    color: #9ca3af;
+    font-style: italic;
+}
+
+.btn,
+.btnHide {
+    width: 180px;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.25s;
+}
+
+.btn {
+    background: #2563eb;
+    color: white;
+}
+
+.btn:hover {
+    background: #1d4ed8;
+}
+
+.btnHide {
+    background: #ef4444;
+    color: white;
+}
+
+.btnHide:hover {
+    background: #dc2626;
+}
+
+.avatar {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 auto 10px;
+    display: block;
+    border: 3px solid #2563eb;
+    background: #f3f4f6;
+}
+
+
+@media (max-width: 768px) {
+
+    .heading {
+        font-size: 2.3rem;
+        text-align: center;
+    }
+
+    .inputs,
+    .card {
+        width: 90%;
+        max-width: 400px;
+        padding: 22px;
+    }
+
+    .btn,
+    .btnHide {
+        width: 170px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .wrapper {
+        padding: 20px;
+        gap: 20px;
+    }
+
+    .heading {
+        font-size: 1.9rem;
+    }
+
+    .inputs,
+    .card {
+        width: 100%;
+        padding: 20px;
+        border-radius: 10px;
+    }
+
+    .subHeading {
+        font-size: 1.2rem;
+    }
+
+    .inputsBox {
+        font-size: 0.95rem;
+        padding: 10px;
+    }
+
+    .row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+    }
+
+    .label,
+    .value,
+    .invalid {
+        font-size: 0.95rem;
+    }
+
+    .btn,
+    .btnHide {
+        width: 100%;
+        font-size: 0.95rem;
+    }
+}
