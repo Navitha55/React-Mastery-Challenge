@@ -1,0 +1,156 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f5f7fb;
+}
+
+.app {
+    min-height: 100vh;
+}
+
+/* Header */
+
+.appHeader {
+    text-align: center;
+    padding: 35px 20px 25px;
+}
+
+.appHeader h1 {
+    margin: 0;
+    font-size: 2.2rem;
+    color: #1f2937;
+}
+
+.appHeader p {
+    margin: 8px 0 0;
+    color: #6b7280;
+    font-size: 0.95rem;
+}
+
+/* Navigation */
+
+.dayNavigation {
+    width: min(1100px, 92%);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 10px;
+}
+
+/* Day buttons */
+
+.dayButton {
+    min-height: 70px;
+    padding: 10px;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    background: white;
+    color: #374151;
+    cursor: pointer;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+
+    transition: 0.2s ease;
+}
+
+.dayButton span {
+    font-size: 0.95rem;
+    font-weight: 600;
+}
+
+.dayButton small {
+    font-size: 0.75rem;
+    color: #6b7280;
+}
+
+.dayButton:hover:not(.disabled) {
+    border-color: #2563eb;
+    transform: translateY(-2px);
+}
+
+/* Active day */
+
+.dayButton.active {
+    background: #2563eb;
+    border-color: #2563eb;
+    color: white;
+}
+
+.dayButton.active small {
+    color: #dbeafe;
+}
+
+/* Future days */
+
+.dayButton.disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+    background: #f9fafb;
+}
+
+/* Selected challenge */
+
+.challengeContent {
+    width: 100%;
+    padding: 20px 0 40px;
+}
+
+
+/* Tablet */
+
+@media (max-width: 900px) {
+
+    .dayNavigation {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+
+/* Mobile */
+
+@media (max-width: 600px) {
+
+    .appHeader {
+        padding: 25px 15px 20px;
+    }
+
+    .appHeader h1 {
+        font-size: 1.7rem;
+    }
+
+    .appHeader p {
+        font-size: 0.85rem;
+    }
+
+    .dayNavigation {
+        width: 92%;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+    }
+
+    .dayButton {
+        min-height: 65px;
+    }
+
+    .challengeContent {
+        padding-top: 15px;
+    }
+}
+
+
+/* Very small screens */
+
+@media (max-width: 350px) {
+
+    .dayNavigation {
+        grid-template-columns: 1fr;
+    }
+}

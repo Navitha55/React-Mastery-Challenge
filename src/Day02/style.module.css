@@ -1,0 +1,100 @@
+.container {
+    width: 450px;
+    margin: 50px auto;
+    padding: 25px;
+    border-radius: 12px;
+    background: #f8f9fa;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.title {
+    text-align: center;
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 25px;
+}
+
+.list {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px;
+    margin-bottom: 10px;
+    background: white;
+    border-radius: 8px;
+}
+
+.task {
+    flex: 1;
+    font-size: 16px;
+}
+
+.input {
+    flex: 1;
+    padding: 8px 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 15px;
+    outline: none;
+}
+
+.input:focus {
+    border-color: #555;
+}
+
+button {
+    padding: 7px 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.task {
+    flex: 1;
+    font-size: 16px;
+}
+
+.completed {
+    text-decoration: line-through;
+    opacity: 0.6;
+}
+
+.completeButton {
+    background: #d4edda;
+    color: #155724;
+}
+
+.updateButton {
+    background: #fff3cd;
+    color: #856404;
+}
+
+.deleteButton {
+    background: #f8d7da;
+    color: #721c24;
+}
+
+.saveButton {
+    background: #cce5ff;
+    color: #004085;
+}
+
+.addButton {
+    display: block;
+    margin: 20px auto 0;
+    padding: 10px 20px;
+    background: #333;
+    color: white;
+    font-size: 15px;
+}
+
+button:hover {
+    opacity: 0.8;
+}
