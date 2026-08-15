@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { Parent } from "./Day01/Day01";
-import { ToDoList } from "./Day02/TodoList";
+import ToDoList from "./Day02/TodoList";
+import ShoppingCart from "./Day03/ShoppingCart";
+import { StopWatch } from "./Day04/StopWatch";
 import "./App.css";
 
 function App() {
@@ -8,65 +10,43 @@ function App() {
 
   return (
     <div className="app">
-
       <header className="appHeader">
         <h1>React Mastery Challenge</h1>
         <p>7 Days of React • Learn by Building</p>
       </header>
 
       <nav className="dayNavigation">
-        <button
-          className={day === 1 ? "dayButton active" : "dayButton"}
-          onClick={() => setDay(1)}
-        >
+        <button className={day === 1 ? "dayButton active" : "dayButton"} onClick={() => setDay(1)} >
           <span>Day 1</span>
           <small>User Profile Card</small>
         </button>
 
-        <button
-          className={day === 2 ? "dayButton active" : "dayButton"}
-          onClick={() => setDay(2)}
-        >
+        <button className={day === 2 ? "dayButton active" : "dayButton"} onClick={() => setDay(2)}>
           <span>Day 2</span>
           <small>Todo List</small>
         </button>
 
-        <button
-          className="dayButton disabled"
-          disabled
-        >
+        <button className={day === 3 ? "dayButton active" : "dayButton"} onClick={() => setDay(3)}>
           <span>Day 3</span>
-          <small>Coming Soon</small>
+          <small>Shopping Cart</small>
         </button>
 
-        <button
-          className="dayButton disabled"
-          disabled
-        >
+        <button className={day === 4 ? "dayButton active" : "dayButton"} onClick={() => setDay(4)}>
           <span>Day 4</span>
-          <small>Coming Soon</small>
+          <small>Stop Watch</small>
         </button>
 
-        <button
-          className="dayButton disabled"
-          disabled
-        >
+        <button className="dayButton disabled" disabled >
           <span>Day 5</span>
           <small>Coming Soon</small>
         </button>
 
-        <button
-          className="dayButton disabled"
-          disabled
-        >
+        <button className="dayButton disabled" disabled >
           <span>Day 6</span>
           <small>Coming Soon</small>
         </button>
 
-        <button
-          className="dayButton disabled"
-          disabled
-        >
+        <button className="dayButton disabled" disabled>
           <span>Day 7</span>
           <small>Coming Soon</small>
         </button>
@@ -75,8 +55,9 @@ function App() {
       <main className="challengeContent">
         {day === 1 && <Parent />}
         {day === 2 && <ToDoList />}
+        {day === 3 && <ShoppingCart />}
+        {day === 4 && <StopWatch />}
       </main>
-
     </div>
   );
 }

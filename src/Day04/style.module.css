@@ -1,0 +1,112 @@
+.container {
+    width: min(500px, 90%);
+    margin: 60px auto;
+    padding: 35px 25px;
+    text-align: center;
+    background: #f8fafc;
+    border: 1px solid #e5e7eb;
+    border-radius: 14px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+}
+
+.title {
+    margin: 0 0 25px;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #1f2937;
+}
+
+.display {
+    padding: 20px;
+    font-family: "Courier New", monospace;
+    font-size: 3.5rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    color: #111827;
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+}
+
+.status {
+    margin: 15px 0 25px;
+    font-size: 0.95rem;
+    color: #6b7280;
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.controls button {
+    min-width: 110px;
+    padding: 10px 16px;
+    border: none;
+    border-radius: 7px;
+    color: white;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.startButton {
+    background: #2563eb;
+}
+
+.startButton:hover:not(:disabled) {
+    background: #1d4ed8;
+}
+
+.pauseButton {
+    background: #f59e0b;
+}
+
+.pauseButton:hover:not(:disabled) {
+    background: #d97706;
+}
+
+.stopButton {
+    background: #ef4444;
+}
+
+.stopButton:hover:not(:disabled) {
+    background: #dc2626;
+}
+
+
+.controls button:disabled {
+    background: #d1d5db;
+    color: #6b7280;
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+@media (max-width: 480px) {
+
+    .container {
+        width: 88%;
+        margin: 35px auto;
+        padding: 25px 18px;
+    }
+
+    .title {
+        font-size: 1.6rem;
+    }
+
+    .display {
+        font-size: 2.7rem;
+        padding: 18px 10px;
+    }
+
+    .controls {
+        flex-direction: column;
+    }
+
+    .controls button {
+        width: 100%;
+    }
+}

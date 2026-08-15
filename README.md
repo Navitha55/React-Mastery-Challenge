@@ -8,8 +8,8 @@ A 7-day hands-on journey to learn and practice React through mini projects.
 |-----|---------|--------|
 | Day 1 | User Profile Card | ✅ |
 | Day 2 | Todo List | ✅ |
-| Day 3 | Coming Soon | ⏳ |
-| Day 4 | Coming Soon | ⏳ |
+| Day 3 | Shopping Cart | ✅ |
+| Day 4 | Stop Watch | ✅ |
 | Day 5 | Coming Soon | ⏳ |
 | Day 6 | Coming Soon | ⏳ |
 | Day 7 | Coming Soon | ⏳ |

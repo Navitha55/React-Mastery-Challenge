@@ -1,128 +1,109 @@
-import { useState } from "react";
+import React from "react";
 import styles from "./style.module.css";
 
-export const ToDoList = () => {
-    const [items, setItems] = useState([]);
+class ToDoList extends React.Component {
 
-    const [editingId, setEditingId] = useState(null);
-    const [editText, setEditText] = useState("");
-
-    const addItem = () => {
-        const text = prompt("Enter your task:");
-
-        if (!text?.trim()) return;
-
-        const newItem = {
-            id: Date.now(),
-            text: text.trim(),
-            done: false
+    constructor(props) {
+        super(props);
+        this.state = {
+            items: [],
+            editingId: null,
+            editText: ""
         };
 
-        setItems([...items, newItem]);
-    };
+        this.addItem = () => {
+            const text = prompt("Enter your task:");
+            if (!text?.trim()) return;
+            const newItem = {
+                id: Date.now(),
+                text: text.trim(),
+                done: false
+            };
+            this.setState({
+                items: [...this.state.items, newItem]
+            });
+        };
 
-    const deleteItem = (id) => {
-        setItems(items.filter((item) => item.id !== id));
-    };
+        this.deleteItem = (id) => {
+            this.setState({
+                items: this.state.items.filter(
+                    (item) => item.id !== id
+                )
+            });
+        };
 
-    const handleDoneToggle = (id) => {
-        setItems(
-            items.map((item) =>
-                item.id === id
-                    ? { ...item, done: !item.done }
-                    : item
-            )
+        this.handleDoneToggle = (id) => {
+            this.setState({
+                items: this.state.items.map(
+                    (item) =>
+                        item.id === id
+                            ? { ...item, done: !item.done }
+                            : item
+                )
+            });
+        };
+
+        this.handleEdit = (item) => {
+            this.setState({
+                editingId: item.id,
+                editText: item.text
+            });
+        };
+
+        this.handleUpdate = (id) => {
+            if (!this.state.editText.trim()) return;
+
+            this.setState({
+                items: this.state.items.map(
+                    (item) =>
+                        item.id === id
+                            ? {
+                                ...item,
+                                text: this.state.editText.trim()
+                            }
+                            : item
+                ),
+                editingId: null,
+                editText: ""
+            });
+        };
+    }
+
+    render() {
+        return (
+            <div className={styles.container}>
+
+                <p className={styles.title}>
+                    ToDo List
+                </p>
+
+                <ul className={styles.list}>
+                    {this.state.items.map((item) => (
+                        <li key={item.id} className={styles.item}>
+                            {this.state.editingId === item.id ? (
+                                <>
+                                    <input className={styles.input} value={this.state.editText} onChange={(e) =>
+                                        this.setState({
+                                            editText: e.target.value
+                                        })
+                                    } />
+                                    <button className={styles.saveButton} onClick={() => this.handleUpdate(item.id)}>Save</button>
+                                </>
+                            ) : (
+                                <>
+                                    <span className={`${styles.task} ${item.done ? styles.completed : ""}`}> {item.text} </span>
+                                    <button className={styles.completeButton} onClick={() => this.handleDoneToggle(item.id)}>{item.done ? "Completed" : "Complete"}</button>
+                                    <button className={styles.updateButton} onClick={() => this.handleEdit(item)}> Update </button>
+                                    <button className={styles.deleteButton} onClick={() => this.deleteItem(item.id)}>Delete</button>
+                                </>
+                            )}
+                        </li>
+                    ))}
+                </ul>
+                <button className={styles.addButton} onClick={this.addItem}> Add Task </button>
+            </div>
         );
-    };
+    }
+}
 
-    const handleEdit = (item) => {
-        setEditingId(item.id);
-        setEditText(item.text);
-    };
-
-    const handleUpdate = (id) => {
-        if (!editText.trim()) return;
-
-        setItems(
-            items.map((item) =>
-                item.id === id
-                    ? { ...item, text: editText.trim() }
-                    : item
-            )
-        );
-
-        setEditingId(null);
-        setEditText("");
-    };
-
-    return (
-        <div className={styles.container}>
-            <p className={styles.title}>ToDo List</p>
-
-            <ul className={styles.list}>
-                {items.map((item) => (
-                    <li key={item.id} className={styles.item}>
-
-                        {editingId === item.id ? (
-                            <>
-                                <input
-                                    className={styles.input}
-                                    value={editText}
-                                    onChange={(e) =>
-                                        setEditText(e.target.value)
-                                    }
-                                />
-
-                                <button
-                                    className={styles.saveButton}
-                                    onClick={() => handleUpdate(item.id)}
-                                >
-                                    Save
-                                </button>
-                            </>
-                        ) : (
-                            <>
-                                <span
-                                    className={`${styles.task} ${item.done ? styles.completed : ""}`}
-                                >
-                                    {item.text}
-                                </span>
-
-                                <button
-                                    className={styles.completeButton}
-                                    onClick={() =>
-                                        handleDoneToggle(item.id)
-                                    }
-                                >
-                                    {item.done ? "Completed" : "Complete"}
-                                </button>
-
-                                <button
-                                    className={styles.updateButton}
-                                    onClick={() => handleEdit(item)}
-                                >
-                                    Update
-                                </button>
-
-                                <button
-                                    className={styles.deleteButton}
-                                    onClick={() => deleteItem(item.id)}
-                                >
-                                    Delete
-                                </button>
-                            </>
-                        )}
-
-                    </li>
-                ))}
-            </ul>
-
-            <button
-                className={styles.addButton}
-                onClick={addItem}
-            >
-                Add Task
-            </button>
-        </div>
-    );
-};
+export default ToDoList;
