@@ -4,6 +4,7 @@ import ToDoList from "./Day02/TodoList";
 import ShoppingCart from "./Day03/ShoppingCart";
 import { StopWatch } from "./Day04/StopWatch";
 import "./App.css";
+import { ParentForm } from "./Day05/Registration";
 
 function App() {
   const [day, setDay] = useState(0);
@@ -23,17 +24,17 @@ function App() {
 
         <button className={day === 2 ? "dayButton active" : "dayButton"} onClick={() => setDay(2)}>
           <span>Day 2</span>
-          <small>Todo List</small>
+          <small>User Registration Form</small>
         </button>
 
-        <button className={day === 3 ? "dayButton active" : "dayButton"} onClick={() => setDay(3)}>
+        <button className="dayButton disabled" disabled >
           <span>Day 3</span>
-          <small>Shopping Cart</small>
+          <small>Coming Soon</small>
         </button>
 
         <button className={day === 4 ? "dayButton active" : "dayButton"} onClick={() => setDay(4)}>
           <span>Day 4</span>
-          <small>Stop Watch</small>
+          <small>To Do List</small>
         </button>
 
         <button className="dayButton disabled" disabled >
@@ -50,13 +51,24 @@ function App() {
           <span>Day 7</span>
           <small>Coming Soon</small>
         </button>
+
+        <button className={day === 8 ? "dayButton active" : "dayButton"} onClick={() => setDay(8)}>
+          <span>Day 8</span>
+          <small>Stop Watch</small>
+        </button>
+
+        <button className={day === 9 ? "dayButton active" : "dayButton"} onClick={() => setDay(9)}>
+          <span>Day 9</span>
+          <small>Shopping Cart</small>
+        </button>
       </nav>
 
       <main className="challengeContent">
         {day === 1 && <Parent />}
-        {day === 2 && <ToDoList />}
-        {day === 3 && <ShoppingCart />}
-        {day === 4 && <StopWatch />}
+        {day === 2 && <ParentForm />}
+        {day === 4 && <ToDoList />}
+        {day === 8 && <StopWatch />}
+        {day === 9 && <ShoppingCart />}
       </main>
     </div>
   );

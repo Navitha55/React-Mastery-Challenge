@@ -1,0 +1,138 @@
+.container {
+    width: min(500px, 92%);
+    margin: 40px auto;
+    padding: 28px;
+    background: #f8fafc;
+    border: 1px solid #e5e7eb;
+    border-radius: 14px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+}
+
+.container h2 {
+    margin: 0 0 25px;
+    text-align: center;
+    color: #1f2937;
+    font-size: 1.7rem;
+}
+
+.field,
+.hobbiesSection {
+    margin-bottom: 18px;
+}
+
+.field label,
+.hobbiesSection>label {
+    display: block;
+    margin-bottom: 7px;
+    font-weight: 600;
+    color: #374151;
+}
+
+.field input,
+.hobbyRow input {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px 12px;
+    border: 1px solid #d1d5db;
+    border-radius: 7px;
+    outline: none;
+    font-size: 0.95rem;
+    background: white;
+}
+
+.field input:focus,
+.hobbyRow input:focus {
+    border-color: #2563eb;
+}
+
+.error {
+    display: block;
+    margin-top: 5px;
+    color: #dc2626;
+    font-size: 0.82rem;
+}
+
+.hobbyRow {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 8px;
+}
+
+.hobbyRow input {
+    flex: 1;
+}
+
+.removeButton {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 7px;
+    background: #fee2e2;
+    color: #b91c1c;
+    cursor: pointer;
+}
+
+.removeButton:hover {
+    background: #fecaca;
+}
+
+.addButton {
+    margin-top: 5px;
+    padding: 9px 14px;
+    border: none;
+    border-radius: 7px;
+    background: #e0e7ff;
+    color: #3730a3;
+    cursor: pointer;
+}
+
+.addButton:hover {
+    background: #c7d2fe;
+}
+
+.submitButton {
+    width: 100%;
+    margin-top: 10px;
+    padding: 11px;
+    border: none;
+    border-radius: 7px;
+    background: #2563eb;
+    color: white;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.submitButton:hover {
+    background: #1d4ed8;
+}
+
+.success {
+    width: min(500px, 92%);
+    margin: -25px auto 30px;
+    text-align: center;
+    color: #15803d;
+    font-weight: 600;
+}
+
+
+/* Mobile */
+
+@media (max-width: 480px) {
+
+    .container {
+        padding: 20px;
+        margin: 25px auto;
+    }
+
+    .container h2 {
+        font-size: 1.4rem;
+    }
+
+    .hobbyRow {
+        flex-direction: column;
+    }
+
+    .removeButton {
+        width: 100%;
+    }
+}
