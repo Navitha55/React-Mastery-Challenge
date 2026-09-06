@@ -6,6 +6,7 @@ import { StopWatch } from "./Day04/StopWatch";
 import "./App.css";
 import { ParentForm } from "./Day05/Registration";
 import { Day06 } from "./Day06/Day06";
+import { Day07 } from "./Day07/Day07";
 
 function App() {
   const [day, setDay] = useState(0);
@@ -48,9 +49,12 @@ function App() {
           <small>To Do List</small>
         </button>
 
-        <button className="dayButton disabled" disabled >
+        <button
+          className={day === 5 ? "dayButton active" : "dayButton"}
+          onClick={() => setDay(5)}
+        >
           <span>Day 5</span>
-          <small>Coming Soon</small>
+          <small>User Directory</small>
         </button>
 
         <button className="dayButton disabled" disabled >
@@ -79,6 +83,7 @@ function App() {
         {day === 2 && <ParentForm />}
         {day === 3 && <Day06 />}
         {day === 4 && <ToDoList />}
+        {day === 5 && <Day07 />}
         {day === 8 && <StopWatch />}
         {day === 9 && <ShoppingCart />}
       </main>
