@@ -5,6 +5,7 @@ import ShoppingCart from "./Day03/ShoppingCart";
 import { StopWatch } from "./Day04/StopWatch";
 import "./App.css";
 import { ParentForm } from "./Day05/Registration";
+import { Day06 } from "./Day06/Day06";
 
 function App() {
   const [day, setDay] = useState(0);
@@ -27,9 +28,19 @@ function App() {
           <small>User Registration Form</small>
         </button>
 
-        <button className="dayButton disabled" disabled >
+        <button
+          className={
+            day === 3
+              ? "dayButton active"
+              : "dayButton"
+          }
+          onClick={() => setDay(3)}
+        >
           <span>Day 3</span>
-          <small>Coming Soon</small>
+
+          <small>
+            Notification & Settings
+          </small>
         </button>
 
         <button className={day === 4 ? "dayButton active" : "dayButton"} onClick={() => setDay(4)}>
@@ -66,6 +77,7 @@ function App() {
       <main className="challengeContent">
         {day === 1 && <Parent />}
         {day === 2 && <ParentForm />}
+        {day === 3 && <Day06 />}
         {day === 4 && <ToDoList />}
         {day === 8 && <StopWatch />}
         {day === 9 && <ShoppingCart />}

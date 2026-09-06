@@ -8,7 +8,7 @@ A 7-day hands-on journey to learn and practice React through mini projects.
 |-----|---------|--------|
 | Day 1 | User Profile Card | ✅ |
 | Day 2 | Registration Form | ✅ |
-| Day 5 | Coming Soon | ⏳ |
+| Day 3 | Notification & Settings | ✅ |
 | Day 4 | To Do List | ✅ |
 | Day 5 | Coming Soon | ⏳ |
 | Day 6 | Coming Soon | ⏳ |
